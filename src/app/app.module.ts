@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 // 内部样式
 @Component({
@@ -45,11 +45,36 @@ class InlineStyle {
 class ExternalStyle {
 }
 
+// native
+@Component({
+  selector: `native-encapsulation`,
+  styles: [`
+  .highlight {
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }`],
+  template: `
+  <h4 class="ui horizontal divider header">
+    Native encapsulation example
+  </h4>
+
+  <div class="highlight">
+    This component uses <code>ViewEncapsulation.Native</code>
+  </div>
+  `,
+  encapsulation: ViewEncapsulation.Native
+})
+class NativeEncapsulation {
+}
+
 @Component({
   selector: 'app-root',
   template: `
   <inline-style></inline-style>
   <external-style></external-style>
+  <native-encapsulation></native-encapsulation>
   `
 })
 export class AppComponent {
@@ -60,7 +85,8 @@ export class AppComponent {
   declarations: [
     AppComponent,
     InlineStyle,
-    ExternalStyle
+    ExternalStyle,
+    NativeEncapsulation
   ],
   imports: [
     BrowserModule
