@@ -27,11 +27,29 @@ import { Component } from '@angular/core';
 class InlineStyle {
 }
 
+// 外部样式
+@Component({
+  selector: 'external-style',
+  styleUrls: ['./external.css'],
+  template: `
+  <h4 class="ui horizontal divider header">
+    External style example
+  </h4>
+
+  <div class="highlight">
+    This uses component <code>styleUrls</code>
+    property
+  </div>
+  `
+})
+class ExternalStyle {
+}
 
 @Component({
   selector: 'app-root',
   template: `
   <inline-style></inline-style>
+  <external-style></external-style>
   `
 })
 export class AppComponent {
@@ -41,7 +59,8 @@ export class AppComponent {
 @NgModule({
   declarations: [
     AppComponent,
-    InlineStyle
+    InlineStyle,
+    ExternalStyle
   ],
   imports: [
     BrowserModule
