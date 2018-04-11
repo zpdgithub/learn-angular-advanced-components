@@ -26,9 +26,13 @@ import {
   SidebarItemComponent
 } from './app/sidebar';
 
+import { HostSampleApp1, HostSampleApp1Module } from './host/steps/host_01';
+
+
 const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
   { label: 'Styling', name: 'Styling', path: 'styling', component: StyleSampleApp },
+  { label: 'Modifying the Host (Step 1)', name: 'Host1', path: 'host-step-1', component: HostSampleApp1, dev: true },
 ];
 const routes: Routes = examples
   .map((example: ExampleDef) => ({
@@ -56,11 +60,12 @@ export class AppComponent {
     AppComponent,
     IntroComponent,
     SidebarComponent,
-    SidebarItemComponent
+    SidebarItemComponent,
   ],
   imports: [
     BrowserModule,
     StyleSampleAppModule,
+    HostSampleApp1Module,
     RouterModule.forRoot(routes)
   ],
   providers: [
