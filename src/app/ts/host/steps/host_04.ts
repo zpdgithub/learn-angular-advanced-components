@@ -3,7 +3,7 @@ import { Component, Input, Directive, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[popup]',
-  exportAs: 'popup',
+  exportAs: 'popup',  // 指令在模板中的任何地方都能访问到
   host: {
     '(click)': 'displayMessage()'
   }
