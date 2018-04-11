@@ -21,7 +21,10 @@ import {
 import { ExampleDef } from './app/example';
 
 import { IntroComponent } from './app/intro_component';
-
+import {
+  SidebarComponent,
+  SidebarItemComponent
+} from './app/sidebar';
 
 const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
@@ -35,17 +38,25 @@ const routes: Routes = examples
 @Component({
   selector: 'app-root',
   template: `
+  <sidebar [items]="examples"></sidebar>
   <router-outlet></router-outlet>
   `
 })
 export class AppComponent {
+  examples: ExampleDef[];
+
+  constructor() {
+    this.examples = examples;
+  }
 }
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    IntroComponent
+    IntroComponent,
+    SidebarComponent,
+    SidebarItemComponent
   ],
   imports: [
     BrowserModule,
