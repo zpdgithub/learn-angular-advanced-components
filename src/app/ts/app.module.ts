@@ -7,6 +7,8 @@ import {
   StyleSampleAppModule,
 } from './styling/styling';
 
+import { ExampleDef } from './app/example';
+
 @Component({
   selector: 'app-root',
   template: `
