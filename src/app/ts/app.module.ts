@@ -31,6 +31,7 @@ import { HostSampleApp2, HostSampleApp2Module } from './host/steps/host_02';
 import { HostSampleApp3, HostSampleApp3Module } from './host/steps/host_03';
 import { HostSampleApp4, HostSampleApp4Module } from './host/steps/host_04';
 
+import { ContentProjectionSampleApp, Message } from './content-projection/content-projection';
 
 const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
@@ -39,6 +40,7 @@ const examples: ExampleDef[] = [
   { label: 'Modifying the Host (Step 2)', name: 'Host2', path: 'host-step-2', component: HostSampleApp2, dev: true },
   { label: 'Modifying the Host (Step 3)', name: 'Host3', path: 'host-step-3', component: HostSampleApp3, dev: true },
   { label: 'Modifying the Host (Step 4)', name: 'Host4', path: 'host-step-4', component: HostSampleApp4, dev: true },
+  { label: 'Content Projection', name: 'ContentProjection', path: 'content-projection', component: ContentProjectionSampleApp },
 ];
 const routes: Routes = examples
   .map((example: ExampleDef) => ({
@@ -67,6 +69,8 @@ export class AppComponent {
     IntroComponent,
     SidebarComponent,
     SidebarItemComponent,
+    ContentProjectionSampleApp,
+    Message,
   ],
   imports: [
     BrowserModule,
