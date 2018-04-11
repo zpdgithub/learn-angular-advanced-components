@@ -29,6 +29,7 @@ import {
 import { HostSampleApp1, HostSampleApp1Module } from './host/steps/host_01';
 import { HostSampleApp2, HostSampleApp2Module } from './host/steps/host_02';
 import { HostSampleApp3, HostSampleApp3Module } from './host/steps/host_03';
+import { HostSampleApp4, HostSampleApp4Module } from './host/steps/host_04';
 
 
 const examples: ExampleDef[] = [
@@ -37,6 +38,7 @@ const examples: ExampleDef[] = [
   { label: 'Modifying the Host (Step 1)', name: 'Host1', path: 'host-step-1', component: HostSampleApp1, dev: true },
   { label: 'Modifying the Host (Step 2)', name: 'Host2', path: 'host-step-2', component: HostSampleApp2, dev: true },
   { label: 'Modifying the Host (Step 3)', name: 'Host3', path: 'host-step-3', component: HostSampleApp3, dev: true },
+  { label: 'Modifying the Host (Step 4)', name: 'Host4', path: 'host-step-4', component: HostSampleApp4, dev: true },
 ];
 const routes: Routes = examples
   .map((example: ExampleDef) => ({
@@ -72,6 +74,7 @@ export class AppComponent {
     HostSampleApp1Module,
     HostSampleApp2Module,
     HostSampleApp3Module,
+    HostSampleApp4Module,
     RouterModule.forRoot(routes)
   ],
   providers: [
