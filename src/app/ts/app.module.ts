@@ -27,12 +27,14 @@ import {
 } from './app/sidebar';
 
 import { HostSampleApp1, HostSampleApp1Module } from './host/steps/host_01';
+import { HostSampleApp2, HostSampleApp2Module } from './host/steps/host_02';
 
 
 const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
   { label: 'Styling', name: 'Styling', path: 'styling', component: StyleSampleApp },
   { label: 'Modifying the Host (Step 1)', name: 'Host1', path: 'host-step-1', component: HostSampleApp1, dev: true },
+  { label: 'Modifying the Host (Step 2)', name: 'Host2', path: 'host-step-2', component: HostSampleApp2, dev: true },
 ];
 const routes: Routes = examples
   .map((example: ExampleDef) => ({
@@ -66,6 +68,7 @@ export class AppComponent {
     BrowserModule,
     StyleSampleAppModule,
     HostSampleApp1Module,
+    HostSampleApp2Module,
     RouterModule.forRoot(routes)
   ],
   providers: [
