@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Component, ViewEncapsulation } from '@angular/core';
 
@@ -64,7 +63,7 @@ class ExternalStyle {
     This component uses <code>ViewEncapsulation.Native</code>
   </div>
   `,
-  encapsulation: ViewEncapsulation.Native
+  encapsulation: ViewEncapsulation.Native // Shadow Dom
 })
 class NativeEncapsulation {
 }
@@ -88,36 +87,36 @@ class NativeEncapsulation {
     This component uses <code>ViewEncapsulation.None</code>
   </div>
   `,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None // 不封装，允许样式渗透给页面的其他元素
 })
 class NoEncapsulation {
 }
 
+
 @Component({
-  selector: 'app-root',
+  selector: 'style-sample-app',
   template: `
-  <inline-style></inline-style>
-  <external-style></external-style>
-  <native-encapsulation></native-encapsulation>
-  <no-encapsulation></no-encapsulation>
-  `
+      <inline-style></inline-style>
+      <external-style></external-style>
+      <native-encapsulation></native-encapsulation>
+      <no-encapsulation></no-encapsulation>
+    `
 })
-export class AppComponent {
+export class StyleSampleApp {
 }
 
 
+const components = [
+  StyleSampleApp,
+  InlineStyle,
+  ExternalStyle,
+  NativeEncapsulation,
+  NoEncapsulation
+];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    InlineStyle,
-    ExternalStyle,
-    NativeEncapsulation,
-    NoEncapsulation
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: components,
+  exports: components
 })
-export class AppModule { }
+export class StyleSampleAppModule {
+}
