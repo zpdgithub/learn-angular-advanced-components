@@ -9,6 +9,8 @@ import {
 
 import { ExampleDef } from './app/example';
 
+import { IntroComponent } from './app/intro_component';
+
 @Component({
   selector: 'app-root',
   template: `
@@ -21,7 +23,8 @@ export class AppComponent {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
