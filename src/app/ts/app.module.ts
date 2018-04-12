@@ -33,6 +33,8 @@ import { HostSampleApp4, HostSampleApp4Module } from './host/steps/host_04';
 
 import { ContentProjectionSampleApp, Message } from './content-projection/content-projection';
 
+import { TabsSampleApp, TabsSampleAppModule } from './tabs/tabs';
+
 const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
   { label: 'Styling', name: 'Styling', path: 'styling', component: StyleSampleApp },
@@ -41,6 +43,7 @@ const examples: ExampleDef[] = [
   { label: 'Modifying the Host (Step 3)', name: 'Host3', path: 'host-step-3', component: HostSampleApp3, dev: true },
   { label: 'Modifying the Host (Step 4)', name: 'Host4', path: 'host-step-4', component: HostSampleApp4, dev: true },
   { label: 'Content Projection', name: 'ContentProjection', path: 'content-projection', component: ContentProjectionSampleApp },
+  { label: 'Tabs - Component Querying', name: 'Tabs', path: 'tabs', component: TabsSampleApp },
 ];
 const routes: Routes = examples
   .map((example: ExampleDef) => ({
@@ -70,7 +73,7 @@ export class AppComponent {
     SidebarComponent,
     SidebarItemComponent,
     ContentProjectionSampleApp,
-    Message,
+    Message
   ],
   imports: [
     BrowserModule,
@@ -79,6 +82,7 @@ export class AppComponent {
     HostSampleApp2Module,
     HostSampleApp3Module,
     HostSampleApp4Module,
+    TabsSampleAppModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
