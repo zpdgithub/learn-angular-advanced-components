@@ -35,6 +35,9 @@ import { ContentProjectionSampleApp, Message } from './content-projection/conten
 
 import { TabsSampleApp, TabsSampleAppModule } from './tabs/tabs';
 
+import { LifecycleSampleApp1, LifecycleSampleApp1Module } from './lifecycle-hooks/lifecycle_01';
+
+
 const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
   { label: 'Styling', name: 'Styling', path: 'styling', component: StyleSampleApp },
@@ -44,6 +47,7 @@ const examples: ExampleDef[] = [
   { label: 'Modifying the Host (Step 4)', name: 'Host4', path: 'host-step-4', component: HostSampleApp4, dev: true },
   { label: 'Content Projection', name: 'ContentProjection', path: 'content-projection', component: ContentProjectionSampleApp },
   { label: 'Tabs - Component Querying', name: 'Tabs', path: 'tabs', component: TabsSampleApp },
+  { label: 'Lifecycle 1 - OnInit / OnDestroy', name: 'Lifecycle1', path: 'lifecycle-hooks-1', component: LifecycleSampleApp1 },
 ];
 const routes: Routes = examples
   .map((example: ExampleDef) => ({
@@ -83,6 +87,7 @@ export class AppComponent {
     HostSampleApp3Module,
     HostSampleApp4Module,
     TabsSampleAppModule,
+    LifecycleSampleApp1Module,
     RouterModule.forRoot(routes)
   ],
   providers: [
