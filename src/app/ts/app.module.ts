@@ -38,6 +38,7 @@ import { TabsSampleApp, TabsSampleAppModule } from './tabs/tabs';
 import { LifecycleSampleApp1, LifecycleSampleApp1Module } from './lifecycle-hooks/lifecycle_01';
 import { LifecycleSampleApp2, LifecycleSampleApp2Module } from './lifecycle-hooks/lifecycle_02';
 import { LifecycleSampleApp3, LifecycleSampleApp3Module } from './lifecycle-hooks/lifecycle_03';
+import { LifecycleSampleApp4, LifecycleSampleApp4Module } from './lifecycle-hooks/lifecycle_04';
 
 
 const examples: ExampleDef[] = [
@@ -52,6 +53,7 @@ const examples: ExampleDef[] = [
   { label: 'Lifecycle 1 - OnInit / OnDestroy', name: 'Lifecycle1', path: 'lifecycle-hooks-1', component: LifecycleSampleApp1 },
   { label: 'Lifecycle 2 - OnChanges', name: 'Lifecycle2', path: 'lifecycle-hooks-2', component: LifecycleSampleApp2 },
   { label: 'Lifecycle 3 - Differs', name: 'Lifecycle3', path: 'lifecycle-hooks-3', component: LifecycleSampleApp3 },
+  { label: 'Lifecycle 4 - Full', name: 'Lifecycle4', path: 'lifecycle-hooks-4', component: LifecycleSampleApp4 },
 ];
 const routes: Routes = examples
   .map((example: ExampleDef) => ({
@@ -94,6 +96,7 @@ export class AppComponent {
     LifecycleSampleApp1Module,
     LifecycleSampleApp2Module,
     LifecycleSampleApp3Module,
+    LifecycleSampleApp4Module,
     RouterModule.forRoot(routes)
   ],
   providers: [
