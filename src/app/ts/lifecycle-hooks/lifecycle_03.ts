@@ -56,7 +56,8 @@ class DoCheckItem implements DoCheck {
   differ: any;
 
   constructor(differs: KeyValueDiffers) { // 接收一个KeyValueDiffers的实例
-    this.differ = differs.find([]).create(null);  // 创建一个键值对differ的实例
+    // this.differ = differs.find([]).create(null);  // 创建一个键值对differ的实例
+    this.differ = differs.find([]).create();  // TOCHECK
     this.onRemove = new EventEmitter();
   }
 
