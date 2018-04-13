@@ -13,18 +13,14 @@ import {
   HashLocationStrategy
 } from '@angular/common';
 
-import {
-  StyleSampleApp,
-  StyleSampleAppModule,
-} from './styling/styling';
 
 import { ExampleDef } from './app/example';
 
+import { SidebarComponent, SidebarItemComponent } from './app/sidebar';
+
 import { IntroComponent } from './app/intro_component';
-import {
-  SidebarComponent,
-  SidebarItemComponent
-} from './app/sidebar';
+
+import { StyleSampleApp, StyleSampleAppModule } from './styling/styling';
 
 import { HostSampleApp1, HostSampleApp1Module } from './host/steps/host_01';
 import { HostSampleApp2, HostSampleApp2Module } from './host/steps/host_02';
@@ -83,9 +79,9 @@ export class AppComponent {
 @NgModule({
   declarations: [
     AppComponent,
-    IntroComponent,
     SidebarComponent,
     SidebarItemComponent,
+    IntroComponent,
     ContentProjectionSampleApp,
     Message
   ],
