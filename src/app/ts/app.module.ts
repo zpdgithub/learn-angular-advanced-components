@@ -55,7 +55,7 @@ const examples: ExampleDef[] = [
   { label: 'ngBookIf', name: 'NgBookIf', path: 'ng-book-if', component: IfTemplateSampleApp },
   { label: 'ngBookFor', name: 'NgBookFor', path: 'ng-book-for', component: ForTemplateSampleApp },
 ];
-const routes: Routes = examples
+const routes: Routes = examples // TOCHECK 编译时报错：ERROR in Cannot read property 'loadChildren' of undefined
   .map((example: ExampleDef) => ({
     path: example.path, component: example.component, pathMatch: 'full'
   }));
