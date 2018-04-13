@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Component, ViewEncapsulation } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+
 import {
   RouterModule,
   Routes,
@@ -39,7 +41,14 @@ import { LifecycleSampleApp4, LifecycleSampleApp4Module } from './lifecycle-hook
 import { IfTemplateSampleApp, IfTemplateSampleAppModule } from './templates/if';
 import { ForTemplateSampleApp, ForTemplateSampleAppModule } from './templates/for';
 
-const examples: ExampleDef[] = [
+
+import {
+  OnPushChangeDetectionSampleApp,
+  DefaultCmp,
+  OnPushCmp
+} from './change-detection/onpush';
+
+const examples: ExampleDef[] = [  // tslint:disable:max-line-length
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
   { label: 'Styling', name: 'Styling', path: 'styling', component: StyleSampleApp },
   { label: 'Modifying the Host (Step 1)', name: 'Host1', path: 'host-step-1', component: HostSampleApp1, dev: true },
@@ -54,7 +63,9 @@ const examples: ExampleDef[] = [
   { label: 'Lifecycle 4 - Full', name: 'Lifecycle4', path: 'lifecycle-hooks-4', component: LifecycleSampleApp4 },
   { label: 'ngBookIf', name: 'NgBookIf', path: 'ng-book-if', component: IfTemplateSampleApp },
   { label: 'ngBookFor', name: 'NgBookFor', path: 'ng-book-for', component: ForTemplateSampleApp },
-];
+  { label: 'Change Detection - OnPush', name: 'ChangeDetectionOnPush', path: 'change-detection-onpush', component: OnPushChangeDetectionSampleApp },
+]; // tslint:enable:max-line-length
+
 const routes: Routes = examples // TOCHECK 编译时报错：ERROR in Cannot read property 'loadChildren' of undefined
   .map((example: ExampleDef) => ({
     path: example.path, component: example.component, pathMatch: 'full'
@@ -83,10 +94,14 @@ export class AppComponent {
     SidebarItemComponent,
     IntroComponent,
     ContentProjectionSampleApp,
-    Message
+    Message,
+    OnPushChangeDetectionSampleApp,
+    DefaultCmp,
+    OnPushCmp,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     StyleSampleAppModule,
     HostSampleApp1Module,
     HostSampleApp2Module,
