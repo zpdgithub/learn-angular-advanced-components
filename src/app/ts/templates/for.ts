@@ -18,7 +18,8 @@ import {
 })
 class NgBookRepeat implements DoCheck {
   private items: any;
-  private differ: IterableDiffer;
+  // private differ: IterableDiffer;
+  private differ: IterableDiffer<any>;  // TOCHECK
   private views: Map<any, ViewRef> = new Map<any, ViewRef>();
 
 
@@ -30,7 +31,9 @@ class NgBookRepeat implements DoCheck {
   @Input() set ngBookRepeatOf(items) {
     this.items = items;
     if (this.items && !this.differ) {
-      this.differ = this.differs.find(items).create(this.changeDetector);
+      console.log(this.changeDetector);
+      // this.differ = this.differs.find(items).create(this.changeDetector);
+      this.differ = this.differs.find(items).create(); // TOCHECK
     }
   }
 
