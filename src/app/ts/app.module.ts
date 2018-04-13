@@ -41,6 +41,7 @@ import { LifecycleSampleApp3, LifecycleSampleApp3Module } from './lifecycle-hook
 import { LifecycleSampleApp4, LifecycleSampleApp4Module } from './lifecycle-hooks/lifecycle_04';
 
 import { IfTemplateSampleApp, IfTemplateSampleAppModule } from './templates/if';
+import { ForTemplateSampleApp, ForTemplateSampleAppModule } from './templates/for';
 
 const examples: ExampleDef[] = [
   { label: 'Intro', name: 'Root', path: '', component: IntroComponent },
@@ -56,6 +57,7 @@ const examples: ExampleDef[] = [
   { label: 'Lifecycle 3 - Differs', name: 'Lifecycle3', path: 'lifecycle-hooks-3', component: LifecycleSampleApp3 },
   { label: 'Lifecycle 4 - Full', name: 'Lifecycle4', path: 'lifecycle-hooks-4', component: LifecycleSampleApp4 },
   { label: 'ngBookIf', name: 'NgBookIf', path: 'ng-book-if', component: IfTemplateSampleApp },
+  { label: 'ngBookFor', name: 'NgBookFor', path: 'ng-book-for', component: ForTemplateSampleApp },
 ];
 const routes: Routes = examples
   .map((example: ExampleDef) => ({
@@ -100,6 +102,7 @@ export class AppComponent {
     LifecycleSampleApp3Module,
     LifecycleSampleApp4Module,
     IfTemplateSampleAppModule,
+    ForTemplateSampleAppModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
